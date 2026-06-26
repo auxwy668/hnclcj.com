@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Telegram iOS版中文语言包设置教程：三步切换汉语界面</title><meta name="description" content="Telegram默认是英文界面看不懂怎么办？本文详细讲解iOS版Telegram中文语言包的三种获取方法（官方链接切换、搜索中文频道、手动安装语言文件），附常见中文频道推荐和每次更换手机后的重新设置步骤，让英文不好的用户也能舒适使用Telegram。"><meta name="keywords" content="Telegram中文语言包,iOS Telegram中文设置,Telegram切换中文,Telegram中文频道,Telegram汉化,苹果Telegram中文版,Telegram语言切换"><link rel="canonical" href="https://hnclcj.com/telegram-ios-chinese-setup/"><link rel="alternate" hreflang="zh-CN" href="https://hnclcj.com/telegram-ios-chinese-setup/"><meta name="robots" content="index, follow"><!-- OG --><meta property="og:title" content="Telegram iOS版中文语言包设置教程：三步切换汉语界面"><meta property="og:description" content="Telegram默认是英文界面看不懂怎么办？本文详细讲解iOS版Telegram中文语言包的三种获取方法（官方链接切换、搜索中文频道、手动安装语言文件），附常见中文频道推荐和每次更换手机后的重新设置步骤，让英文不好的用户也能舒适使用Telegram。"><meta property="og:url" content="https://hnclcj.com/telegram-ios-chinese-setup/"><meta property="og:type" content="article"><meta property="og:image" content="https://hnclcj.com/images/og-default.png"><meta name="twitter:card" content="summary_large_image"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Structured Data --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Telegram iOS版中文语言包设置教程：三步切换汉语界面","description":"Telegram默认是英文界面看不懂怎么办？本文详细讲解iOS版Telegram中文语言包的三种获取方法（官方链接切换、搜索中文频道、手动安装语言文件），附常见中文频道推荐和每次更换手机后的重新设置步骤，让英文不好的用户也能舒适使用Telegram。","url":"https://hnclcj.com/telegram-ios-chinese-setup/","datePublished":"2026-06-25","dateModified":"2026-06-25","author":{"@type":"Organization","name":"TG教程指南"},"inLanguage":"zh-CN","image":"https://hnclcj.com/images/og-default.png"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://hnclcj.com"},{"@type":"ListItem","position":2,"name":"Telegram iOS版中文语言包设置教程：三步切换汉语界面"}]}]</script><style>.art-wrap[data-astro-cid-yvbahnfj]{max-width:1100px}</style></head> <body> <!-- Nav --> <nav class="site-nav"> <div class="nav-inner"> <a href="/" class="nav-logo">苹果TG中文版</a> <div class="nav-links"> <a href="/">首页</a> <a href="/articles/">所有教程</a> <a href="/articles/?category=download-ios">App Store下载</a><a href="/articles/?category=install-ios">安装配置</a><a href="/articles/?category=apple-id">Apple ID地区</a><a href="/articles/?category=crash-fix">闪退修复</a><a href="/articles/?category=basic-usage">基础教程</a> </div> </div> </nav> <!-- Breadcrumb (article pages) --> <div class="breadcrumb"> <a href="/">首页</a> <span> &raquo; Telegram iOS版中文语言包设置教程：三步切换汉语界面</span> </div> <main>  <div class="art-wrap" data-astro-cid-yvbahnfj> <article class="art-main" data-astro-cid-yvbahnfj> <h1 data-astro-cid-yvbahnfj>Telegram iOS版中文语言包设置教程：三步切换汉语界面</h1> <div class="art-meta" data-astro-cid-yvbahnfj> <span data-astro-cid-yvbahnfj>📅 2026-06-25</span> <span class="art-tag install-ios" data-astro-cid-yvbahnfj>安装配置</span> </div> <div class="art-body" data-astro-cid-yvbahnfj> <img src="/images/og-default.png" alt="Telegram iOS版中文语言包设置教程：三步切换汉语界面" style="width:100%; border-radius:8px; margin-bottom:24px;" data-astro-cid-yvbahnfj> <p>如果你刚装上 Telegram 看到满屏英文单词就打退堂鼓，别急。Telegram 从 2018 年起就支持通过外部语言包实现界面翻译，而切换到中文只需要几分钟，不需要越狱，也不需要下载任何第三方工具。</p>
+<p>Telegram 的语言包机制是开放的：任何人都可以创建和维护语言包，官方不做审核。这也解释了为什么 Telegram 不在「设置」里直接放一个”切换中文”按钮——它不预装任何非英语语言包，所有翻译都是社区贡献的。</p>
+<p>这篇文章帮你搞清楚三件事：中文语言包在 Telegram 里到底是怎么工作的、怎么选靠谱的中文包、以及换手机之后怎么快速恢复中文界面。</p>
+<img src="/images/telegram-ios-chinese-setup-1.jpg" alt="Telegram中文语言包切换过程截图" width="800" height="450">
+<h2 id="一telegram-语言包的运行机制是什么">一、Telegram 语言包的运行机制是什么</h2>
+<p>在进入具体步骤之前，先花半分钟理解 Telegram 的语言包是怎么运作的，以后遇到”为什么中文消失了”之类的问题你就知道怎么排查了。</p>
+<p>Telegram 的语言包实际上是一个字符串映射表：把界面上的每一个英文单词或短语，映射到对应的中文翻译。这个映射表被放置在一个公开的 Telegram 频道里，以 <code>langpack</code> 链接的形式分发。</p>
+<p>当你点击一个语言包链接，Telegram 客户端会做三件事：</p>
+<ol>
+<li>从链接指向的频道中读取翻译文件</li>
+<li>把翻译文件缓存到你的设备本地</li>
+<li>实时应用翻译，整个 App 界面的文字即刻变成中文</li>
+</ol>
+<p>因为语言包是本地缓存的，所以切换一次之后，即使你断网使用 Telegram，中文界面也不会消失。但这也意味着，如果维护语言包的频道停止更新或删除了，你缓存的中文包就不会再收到新版本的翻译（Telegram 新功能的文字会回退到英文）。</p>
+<p>还有一个冷知识：Telegram 在 iOS 和 Android 上用同一套语言包文件。你在 iPhone 上切换的中文包，和你在安卓手机上用的是同一个来源——Telegram 的翻译系统是跨平台的。</p>
+<h2 id="二方法一通过官方中文包链接一键切换推荐">二、方法一：通过官方中文包链接一键切换（推荐）</h2>
+<p>这是最省事的方法，适合不想折腾的大多数用户。</p>
+<p><strong>具体操作步骤：</strong></p>
+<p><strong>第一步：获取官方中文包链接</strong></p>
+<p>打开 Telegram App，确认已经登录账号。在任意聊天输入框中，输入或粘贴以下 Telegram 链接：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://t.me/setlanguage/zh-hans-raw</span></span></code></pre>
+<p>这是 Telegram 官方推荐的中文简体语言包（社区维护，但被官方纳入了语言包目录）。<code>zh-hans</code> 代表简体中文，<code>raw</code> 表示使用原始翻译格式。</p>
+<p><strong>第二步：点击链接触发切换</strong></p>
+<p>链接在 Telegram 聊天框中会以可点击的蓝色形式显示。直接点击它，屏幕底部会弹出一个确认框，上面写着”Change language to Chinese (Simplified)?”，下方有两个按钮：「取消」和「更改」。</p>
+<p>点击「更改」，Telegram 界面会在一瞬间刷新，所有文字从英文变为中文。</p>
+<p><strong>第三步：验证是否成功</strong></p>
+<p>切换完成后，检查一下：底部导航栏是否从”Chats""Calls""Settings”变成”聊天""通话""设置”？如果是，说明中文包已成功应用。</p>
+<p>如果切换后发现部分文字仍然是英文，这是正常的。Telegram 会定期新增功能按钮和菜单项，语言包的维护者需要时间去翻译新内容，所以会有短暂的未翻译字符串。通常几周内就会补全。</p>
+<p><strong>备用的中文包链接：</strong></p>
+<p>如果上面的链接失效，可以试试这些同样可靠的备选：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>语言包名称</th><th>链接</th><th>说明</th></tr></thead><tbody><tr><td>简体中文（官方推荐）</td><td><code>https://t.me/setlanguage/zh-hans-raw</code></td><td>最常用，翻译最全</td></tr><tr><td>简体中文（备用）</td><td><code>https://t.me/setlanguage/zhcncc</code></td><td>另一个流行中文包</td></tr><tr><td>繁体中文（香港）</td><td><code>https://t.me/setlanguage/zh-hant-raw</code></td><td>繁体用户用这个</td></tr><tr><td>古典中文</td><td><code>https://t.me/setlanguage/classic-zh</code></td><td>趣味语言包</td></tr></tbody></table>
+<h2 id="三方法二通过搜索中文语言频道手动切换">三、方法二：通过搜索中文语言频道手动切换</h2>
+<p>如果你更喜欢直接和语言包的维护者互动，或者想知道正在用的是哪个团队翻译的中文包，用频道搜索的方式更直观。</p>
+<p><strong>操作步骤：</strong></p>
+<ol>
+<li>打开 Telegram，点击右上角的放大镜图标进入搜索</li>
+<li>在搜索框中输入”中文语言包”或”Chinese language pack”</li>
+<li>搜索结果会列出多个维护中文翻译的频道和群组</li>
+<li>进入其中一个频道（通常频道名包含 <code>zh-hans</code> 或 <code>lang</code> 关键字），在频道置顶消息或描述中找到语言包链接</li>
+<li>点击链接完成切换</li>
+</ol>
+<p><strong>几个长期稳定维护的中文语言频道推荐：</strong></p>
+<p>推荐你关注以下中文语言包频道（搜名字即可找到）。关注后不仅能用他们的语言包，以后语言包更新你也能第一时间知道：</p>
+<ul>
+<li><strong>@zh_CN</strong>：目前使用最广泛的简体中文本地化频道，翻译质量高，更新及时</li>
+<li><strong>@taiwan</strong>：正体中文（繁体）语言包，适合港澳台和海外繁体用户</li>
+<li><strong>@CNSG_ZH</strong>：另一个简体中文翻译组，风格更口语化</li>
+</ul>
+<p><strong>切换后建议关注频道：</strong></p>
+<p>应用语言包之后，Telegram 会自动创建一个该语言包频道的快捷入口（在「设置」→「语言」页面可以看到）。建议保持关注，因为语言包维护者偶尔会发通知说明翻译进度或修复错误。</p>
+<h2 id="四方法三从朋友那里获取语言包链接">四、方法三：从朋友那里获取语言包链接</h2>
+<p>如果你身边有已经在用中文版 Telegram 的朋友，最快的方式是直接让他把中文包链接发给你。</p>
+<p>让你的朋友在 Telegram 中打开「设置」→「语言」→ 点击当前使用的语言（比如”简体中文”）→ 选择「分享语言包」或直接复制语言包的 <code>t.me/setlanguage/</code> 链接，发送给你。你收到后点击链接即可一键切换。</p>
+<p>这个方法特别适合帮长辈或不太擅长手机操作的朋友设置中文——面对面操作不超过 20 秒。</p>
+<h2 id="五切换中文后你可能还想调的几个地方">五、切换中文后你可能还想调的几个地方</h2>
+<p>界面变成中文之后，建议顺手把以下几个地方也看一下，确保整体体验一致：</p>
+<p><strong>1. 确认输入法语言</strong></p>
+<p>Telegram 本身切换中文不影响 iPhone 的输入法。你需要单独确认 iOS 系统键盘是否已经添加了中文输入法：iPhone「设置」→「通用」→「键盘」→「键盘」→ 确认列表中有”简体中文”。</p>
+<p><strong>2. 检查区域格式是否影响日期显示</strong></p>
+<p>Telegram 的消息时间戳格式跟随 iOS 系统的「语言与地区」设置。如果你希望消息时间以 24 小时制显示，去 iPhone「设置」→「通用」→「语言与地区」调整。</p>
+<p><strong>3. 清空语言缓存重新加载（如果翻译异常）</strong></p>
+<p>如果切换中文后出现大量乱码或翻译错乱，可以尝试：进入 Telegram「设置」→「语言」→ 点击当前语言 → 选择「删除」或先切回英语再重新应用中文包。这个操作会强制 Telegram 重新从服务器拉取翻译文件。</p>
+<img src="/images/telegram-ios-chinese-setup-2.jpg" alt="Telegram设置中的语言切换入口" width="800" height="450">
+<h2 id="六换了新-iphone-怎么恢复中文界面">六、换了新 iPhone 怎么恢复中文界面</h2>
+<p>每次更换手机、卸载重装 Telegram 或清除应用数据后，中文语言包会丢失，界面恢复为英文。不用担心，恢复只需要几秒。</p>
+<p><strong>方法 A：从旧手机直接迁移（最省事）</strong></p>
+<p>如果你新旧 iPhone 都在手上，旧机上的 Telegram 还没卸载：</p>
+<ol>
+<li>旧机打开 Telegram →「设置」→「语言」</li>
+<li>点击当前使用的中文语言</li>
+<li>选择「分享链接」并通过隔空投送、信息或微信发给新手机</li>
+<li>在新手机上用 Telegram 打开收到的链接即可</li>
+</ol>
+<p><strong>方法 B：在新手机上重新点击语言包链接</strong></p>
+<p>打开新手机上的 Telegram，给自己发一条消息，内容就是中文包链接（<code>https://t.me/setlanguage/zh-hans-raw</code>），点击即可恢复中文。这是最常用的方法，前提是你记得链接地址。</p>
+<p><strong>方法 C：从 Telegram 云端恢复</strong></p>
+<p>如果你在旧手机上关注过中文语言包频道（如 @zh_CN），新手机登录同一个 Telegram 账号后，在聊天列表里找到这个频道，进入后找到语言包链接点击即可。不用重新搜索。</p>
+<p><strong>记住链接的小技巧：</strong></p>
+<p>把语言包链接保存到 Telegram 的「保存的消息」（Saved Messages）中，这是 Telegram 的私人笔记功能。操作：在聊天列表中找到”保存的消息” → 把中文包链接发进去 → 设为置顶。以后换手机或重装时，进去点一下就能切回中文。</p>
+<h2 id="七选错语言包怎么换回英文或切换到其他语言">七、选错语言包怎么换回英文或切换到其他语言</h2>
+<p>如果你不小心应用了一个翻译质量不高或者不完整的中文包，可以在「设置」→「语言」中自由切换。</p>
+<p>切换回英文：进入「设置」→「语言」（中文界面下这个菜单会叫”语言”），从列表中选择”English”（如果当前界面已经是中文，列表中的”English”仍然会显示为 English），点击后界面恢复英文。</p>
+<p>切换到其他语言：在语言列表中选择你想要的语言即可。Telegram 官方支持的社区语言包超过 20 种，包括日语、韩语、西班牙语、阿拉伯语等。</p>
+<hr>
+<p>Telegram 的中文语言包机制虽然不如微信那样内建，但换来的是极大的灵活性——翻译是社区驱动的，质量由用户决定，任何人都可以贡献翻译。如果你发现某个按钮的翻译不准确，甚至可以联系语言包频道管理员提修改建议。</p>
+<p>除了中文化之外，Telegram 安装后还有几项重要设置建议一并完成，例如隐私权限配置和两步验证。如果你是第一次使用 Telegram，可以接着看这篇：<a href="/telegram-ios-install-first/">新手第一次用Telegram：iOS安装后必做5项设置</a>。关于 App Store 下载 Telegram 的完整流程，也可以参考：<a href="/telegram-ios-download-guide/">iPhone/iPad下载Telegram完整教程</a>。</p>
+<hr>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">切换中文后会影响 Telegram 的功能使用吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">完全不会。语言包只改变界面文字的显示语言，对 Telegram 的任何功能（聊天、加密、文件传输、群组管理等）没有任何影响。你仍然可以使用 Telegram 的全部功能，只是界面文字从英文变成了中文。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">中文语言包安全吗？会不会窃取我的聊天记录？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">语言包是公开的翻译文件，只包含界面文字的字符串映射（例如把"Settings"映射为"设置"），不包含任何可执行代码。它无法访问你的聊天记录、联系人、或任何个人数据。不过建议只使用知名频道提供的语言包（如本文推荐的 @zh_CN），避免使用来源不明的翻译链接。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">切换中文后 Telegram 更新了版本，中文会消失吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">不会消失。语言包一旦应用就会缓存在本地，Telegram App 的版本更新不会清除语言设置。但是，如果 Telegram 新增了功能按钮或菜单，这些新的文字元素在语言包更新之前会暂时显示为英文，这是正常现象，等语言包维护者更新翻译后会自动变成中文。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">可以同时安装多个中文语言包吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">Telegram 同一时间只能使用一个语言包。但你可以在不同语言包之间切换：进入「设置」→「语言」，从列表中查看所有已安装的语言包，点击即可切换。切换后的语言包会保留在列表中，下次可以直接选。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">iPad 上设置中文的步骤和 iPhone 一样吗？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">完全一样。iPad 版 Telegram 使用和 iPhone 版相同的语言包机制，操作步骤没有任何区别。打开任意聊天 → 输入语言包链接 → 点击链接 → 确认更改即可。iPad 横屏模式下语言包的显示效果同样正常。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">为什么有的 Telegram 中文教程截图是中文界面，但我下载后是英文？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">因为 Telegram 官方不预装中文语言包，所有中文界面都是用户手动切换后的结果。教程作者在截图前已经应用了中文语言包。你跟着本文第一节的步骤操作一遍，界面就可以变成和教程截图一致的中文效果。</div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">中文语言包翻译不准确或者有错别字怎么反馈？<span class="faq-arrow">▼</span></div>
+<div class="faq-a"><div class="faq-a-inner">主流的中文语言包频道（如 @zh_CN）都有对应的讨论群组，你可以在频道描述中找到群组链接。加入后直接在群里提出翻译建议，管理员通常会采纳合理的修改。Telegram 的语言包是开放的社区项目，每一条翻译改进都来自用户的反馈。</div></div>
+</div>
+</div>
+<p class="notice">📢 声明：本文为 苹果Telegram下载 原创教程，基于 iOS 真机实测编写。本文提及的中文语言包链接和频道均为第三方社区维护，与 Telegram 官方无直接关联。语言包链接可能因频道维护状态变化而失效，请以实际使用情况为准。Telegram 相关商标归 Telegram Messenger LLP 所有。</p> </div> </article> <!-- Sidebar --> <aside class="art-side" data-astro-cid-yvbahnfj> <div class="sb-card" data-astro-cid-yvbahnfj> <h4 data-astro-cid-yvbahnfj>相关教程</h4> <a href="/telegram-ios-install-first/" class="sb-rel-item" data-astro-cid-yvbahnfj> <h5 data-astro-cid-yvbahnfj>新手第一次用Telegram：iOS安装后必做5项设置</h5> </a> </div> <div class="sb-card" data-astro-cid-yvbahnfj> <h4 data-astro-cid-yvbahnfj>热门标签</h4> <div class="trend-tags" data-astro-cid-yvbahnfj> <a href="/articles/?category=download-ios" data-astro-cid-yvbahnfj>App Store下载</a><a href="/articles/?category=install-ios" data-astro-cid-yvbahnfj>安装配置</a><a href="/articles/?category=apple-id" data-astro-cid-yvbahnfj>Apple ID地区</a><a href="/articles/?category=crash-fix" data-astro-cid-yvbahnfj>闪退修复</a><a href="/articles/?category=basic-usage" data-astro-cid-yvbahnfj>基础教程</a> </div> </div> </aside> </div>  </main> <!-- Footer --> <footer class="site-footer"> <div class="footer-inner"> <div class="footer-brand"> <div class="footer-logo">苹果TG中文版</div> <p class="footer-desc">本站为独立教程站点，非 Telegram 官方。所有内容基于公开信息整理。</p> <span class="footer-badge">📚 独立教程网站</span> </div> <div class="footer-col"> <h4>快速导航</h4> <ul> <li><a href="/">首页</a></li> <li><a href="/articles/">所有教程</a></li> <li><a href="/about/">关于我们</a></li> <li><a href="/sitemap/">网站地图</a></li> </ul> </div> <div class="footer-col"> <h4>教程分类</h4> <ul> <li><a href="/articles/?category=download-ios">App Store下载</a></li><li><a href="/articles/?category=install-ios">安装配置</a></li><li><a href="/articles/?category=apple-id">Apple ID地区</a></li><li><a href="/articles/?category=crash-fix">闪退修复</a></li><li><a href="/articles/?category=basic-usage">基础教程</a></li> </ul> </div> <div class="footer-col"> <h4>支持</h4> <ul> <li><a href="/contact/">联系我们</a></li> <li><a href="/privacy/">隐私政策</a></li> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 苹果TG中文版. All rights reserved.</p> </div> </footer> <!-- Inject global CSS (plain <style> avoids Astro's CSS processing) --> <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans SC',sans-serif;background:#ffffff;color:#1e293b;line-height:1.6}a{color:#007AFF;text-decoration:none}a:hover{color:#3395FF}.site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);padding:0 24px}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}.nav-logo{font-size:18px;font-weight:700;color:#007AFF;text-decoration:none}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;color:#475569;text-decoration:none;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:#007AFF}.breadcrumb{max-width:1100px;margin:0 auto;padding:16px 24px 0;font-size:13px;color:#94a3b8}.breadcrumb a{color:#007AFF;text-decoration:none}.art-wrap{max-width:1100px;margin:0 auto;padding:24px;display:flex;gap:32px}.art-main{flex:1;min-width:0;background:#fff;border-radius:12px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.art-main h1{font-size:28px;font-weight:800;line-height:1.4;margin-bottom:16px;color:#1e293b}.art-meta{display:flex;gap:16px;align-items:center;margin-bottom:24px;font-size:13px;color:#94a3b8}.art-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px}.art-tag.download-ios{background:#e0f2fe;color:#0369a1}.art-tag.install-ios{background:#ecfdf5;color:#065f46}.art-tag.apple-id{background:#fef3c7;color:#92400e}.art-tag.crash-fix{background:#f3e8ff;color:#7c3aed}.art-tag.basic-usage{background:#fce7f3;color:#be185d}.art-body{font-size:15px;line-height:1.9;color:#475569}.art-body h2{font-size:22px;font-weight:700;margin:36px 0 16px;color:#1e293b}.art-body h3{font-size:18px;font-weight:600;margin:28px 0 12px;color:#1e293b}.art-body p{margin-bottom:16px}.art-body ul,.art-body ol{margin:12px 0 16px 24px}.art-body li{margin-bottom:8px}.art-body code{background:#f5f7fa;padding:2px 6px;border-radius:4px;font-size:13px;color:#e11d48}.art-body pre{background:#1e293b;color:#e2e8f0;padding:20px;border-radius:8px;overflow-x:auto;margin:16px 0;font-size:13px}.art-side{width:300px;flex-shrink:0}.sb-card{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.sb-card h4{font-size:14px;font-weight:700;margin-bottom:12px;color:#1e293b}.sb-rel-item{display:flex;gap:10px;margin-bottom:12px;text-decoration:none;color:inherit}.sb-rel-item:hover h5{color:#007AFF}.sb-rel-item h5{font-size:13px;font-weight:500;line-height:1.4;transition:color .2s}.trend-tags{display:flex;flex-wrap:wrap;gap:8px}.trend-tags a{font-size:12px;padding:4px 12px;background:#f5f7fa;border-radius:16px;color:#475569;text-decoration:none;transition:all .2s}.trend-tags a:hover{background:#e0f2fe;color:#007AFF}.info-box{background:#f0f9ff;border-left:4px solid #007AFF;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}.warn-box{background:#fffbeb;border-left:4px solid #f59e0b;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}.warn-box strong{color:#92400e}.step-list{counter-reset:step;margin:20px 0}.step-card{background:#fff;border:1px solid #e8ecf1;border-radius:10px;padding:20px;margin-bottom:16px;counter-increment:step;position:relative;padding-left:64px}.step-card::before{content:counter(step);position:absolute;left:16px;top:20px;width:32px;height:32px;background:#007AFF;color:#fff;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:14px}.faq-list{margin:24px 0}.faq-item{border:1px solid #e8ecf1;border-radius:8px;margin-bottom:8px;overflow:hidden}.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:15px;background:#f5f7fa;user-select:none;display:flex;justify-content:space-between;align-items:center}.faq-q:hover{background:#f0f7ff}.faq-arrow{font-size:12px;transition:transform .3s;color:#94a3b8}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-a-inner{padding:0 20px 16px;font-size:14px;color:#475569;line-height:1.7}.faq-item.open .faq-a{max-height:300px}.faq-item.open .faq-arrow{transform:rotate(180deg)}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}th{background:#f0f7ff;padding:12px 16px;text-align:left;font-weight:600;border:1px solid #dce8f3}td{padding:12px 16px;border:1px solid #e8ecf1}.site-footer{background:#f0f7ff;border-top:1px solid #dce8f3;margin-top:80px}.footer-inner{max-width:1100px;margin:0 auto;padding:56px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer-logo{font-size:20px;font-weight:700;color:#3395FF;margin-bottom:12px}.footer-desc{font-size:13px;line-height:1.8;margin-bottom:16px;color:#475569}.footer-badge{display:inline-block;font-size:12px;background:#fff;color:#007AFF;padding:6px 14px;border-radius:20px;font-weight:500;border:1px solid #b8ddf5}.footer-col h4{font-size:13px;font-weight:700;color:#1e293b;margin-bottom:16px;letter-spacing:.02em}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col li a{font-size:13px;color:#475569;text-decoration:none;transition:color .2s}.footer-col li a:hover{color:#007AFF}.footer-bottom{border-top:1px solid #dce8f3;text-align:center;padding:20px 24px;font-size:12px;color:#94a3b8}@media(max-width:768px){.nav-links{display:none}.art-wrap{flex-direction:column}.art-main{padding:24px}.art-side{width:100%}.footer-inner{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}}@media(max-width:480px){.footer-inner{grid-template-columns:1fr}}</style> <!-- FAQ accordion JS --> <script>
+    document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.parentElement;var open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0'});if(!open){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight='500px'}})})});
+  </script> </body> </html>
